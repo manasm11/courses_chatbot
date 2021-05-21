@@ -1,0 +1,5 @@
+__pycache__/
+.cache/
+creds.json
+telegram_api.txt
+env/

@@ -1,0 +1,6 @@
+#!/usr/bin/python3
+
+import os
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "creds.json"
+os.system('env/bin/python telegram_bot.py')
+# os.system('chat/bin/python entity_update.py')
