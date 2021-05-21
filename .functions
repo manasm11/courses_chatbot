@@ -17,6 +17,7 @@ start_setup() {
         font_yellow
         echo "INSTALLING python3-venv... Need priviledge..."
         font_reset
+        sudo apt-get update
         sudo apt-get install python3-venv
         [ $? -ne 0 ] exit 1
     fi
