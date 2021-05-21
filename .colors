@@ -28,7 +28,7 @@ font_blue() {
     tput setaf 4
 }
 
-font_yello() {
+font_yellow() {
     tput bold
     tput setaf 3
 }
