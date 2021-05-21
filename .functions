@@ -10,7 +10,7 @@ start_virtualenv() {
 }
 
 start_setup() {
-    python3 -m venv env 2> /dev/null
+    python3 -m venv env &> /dev/null
     if [ $? -ne 0 ]
     then
         font_yellow
