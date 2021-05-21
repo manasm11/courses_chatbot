@@ -17,6 +17,7 @@ start_setup() {
         echo "INSTALLING python3-venv... Need priviledge..."
         font_reset
         sudo apt-get install python3-venv
+    fi
     ${PIP_PATH} install --upgrade pip
     ${PIP_PATH} install -r requirements.txt
     start_virtualenv
