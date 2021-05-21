@@ -17,8 +17,8 @@ start_setup() {
         font_yellow
         echo "INSTALLING python3-venv... Need priviledge..."
         font_reset
-        sudo apt-get update
-        sudo apt-get install python3-venv
+        sudo apt-get update -y
+        sudo apt-get install python3-venv -y
         [ $? -ne 0 ] exit 1
     fi
     ${PIP_PATH} install --upgrade pip
