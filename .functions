@@ -1,4 +1,5 @@
 #!/bin/bash
+source .colors
 
 VENV_DIR="env"
 PIP_PATH="${VENV_DIR}/bin/pip"
@@ -9,9 +10,15 @@ start_virtualenv() {
 }
 
 start_setup() {
-    python3 -m venv env &&\
-    ${PIP_PATH} install --upgrade pip &&\
-    ${PIP_PATH} install -r requirements.txt &&\
+    python3 -m venv env 
+    if [ #? -ne 0 ]
+    then
+        font_yellow
+        echo "INSTALLING python3-venv... Need priviledge..."
+        font_reset
+        sudo apt-get install python3-venv
+    ${PIP_PATH} install --upgrade pip
+    ${PIP_PATH} install -r requirements.txt
     start_virtualenv
 }
 

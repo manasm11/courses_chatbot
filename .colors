@@ -28,5 +28,8 @@ font_blue() {
     tput setaf 4
 }
 
-
+font_yello() {
+    tput bold
+    tput setaf 3
+}
 
