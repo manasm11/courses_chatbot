@@ -10,13 +10,14 @@ start_virtualenv() {
 }
 
 start_setup() {
-    python3 -m venv env 
-    if [ #? -ne 0 ]
+    python3 -m venv env 2> /dev/null
+    if [ $? -ne 0 ]
     then
         font_yellow
         echo "INSTALLING python3-venv... Need priviledge..."
         font_reset
         sudo apt-get install python3-venv
+        [ $? -ne 0 ] exit 1
     fi
     ${PIP_PATH} install --upgrade pip
     ${PIP_PATH} install -r requirements.txt
