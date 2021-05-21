@@ -1,0 +1,21 @@
+#!/bin/bash
+
+VENV_DIR="env"
+PIP_PATH="${VENV_DIR}/bin/pip"
+PYTHON_PATH="${VENV_DIR}/bin/python"
+
+start_virtualenv() {
+    bash --rcfile <(cat $HOME/.bashrc ${VENV_DIR}/bin/activate)
+}
+
+start_setup() {
+    python3 -m venv env &&\
+    ${PIP_PATH} install --upgrade pip &&\
+    ${PIP_PATH} install -r requirements.txt &&\
+    start_virtualenv
+}
+
+start_project() {
+    ${VENV_DIR}/bin/python start
+}
+

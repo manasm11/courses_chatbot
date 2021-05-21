@@ -1,0 +1,37 @@
+#!/bin/bash
+source .colors
+source .functions
+
+case $1 in
+    start)
+        font_blue
+        echo "starting"
+        font_reset
+        start_project
+        ;;
+    setup)
+        font_blue
+        echo "setting up project"
+        font_reset
+        start_setup
+        ;;
+    env)
+        font_blue
+        echo "starting virtual enviroinment"
+        font_reset
+        start_virtualenv
+        ;;
+    *)
+        font_bold
+        font_red
+        echo "Usage: $0 [start|setup|env]
+        start: to run the project
+        setup: to setup virtual environment and install necessary packages
+        env: to activate virtual environment
+        "
+        font_reset
+        ;;
+esac
+
+tput sgr0
+

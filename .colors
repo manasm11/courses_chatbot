@@ -1,0 +1,32 @@
+#!/bin/bash
+
+font_blink() {
+    tput blink
+}
+
+font_reset(){
+    tput sgr0
+}
+
+font_red(){
+    tput bold
+    tput setaf 1
+}
+
+font_bold() {
+    tput bold
+    tput bold
+}
+
+font_green() {
+    tput bold
+    tput setaf 2
+}
+
+font_blue() {
+    tput bold
+    tput setaf 4
+}
+
+
+
