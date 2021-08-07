@@ -21,6 +21,7 @@ start_setup() {
         sudo apt-get install python3-venv -y
         [ $? -ne 0 ] && exit 1
     fi
+    ${PYTHON_PATH} -m ensurepip && \
     ${PIP_PATH} install --upgrade pip && \
     ${PIP_PATH} install -r requirements.txt && \
     start_virtualenv
